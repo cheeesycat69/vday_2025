@@ -3,9 +3,9 @@ import danceGif from "./dance.gif"; // ✅ Import the GIF
 
 const messagesData = [
     { sender: "Shreshkii", text: "WYBMV", delay: 1000 },
-    { sender: "Anish", text: "Huh, what that mean?", delay: 2000 },
-    { sender: "Shreshkii", text: "Will you be my Valentine?", delay: 3000 },
-    { sender: "Anish", text: "Yesssss", delay: 4000 },
+    { sender: "Anish", text: "Huh, what does that mean?", delay: 2000 },
+    { sender: "Shreshkii", text: "Will you be my VALENTINEE?", delay: 3000 },
+    { sender: "Anish", text: "Yessssszzžż", delay: 4000 },
 ];
 
 const Chatbox = () => {

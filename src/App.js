@@ -15,7 +15,7 @@ const App = () => {
                     frameBorder="0"
                     height="315"
                     id="video"
-                    src="https://www.youtube.com/embed/MxfbUPpwDlw?autoplay=1&loop=1&playlist=zpGpu-pIVEk"
+                    src="https://www.youtube.com/embed/MxfbUPpwDlw?autoplay=1&loop=1&playlist=MxfbUPpwDlw"
                     title="YouTube video player"
                     width="560"
                 ></iframe>

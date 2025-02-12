@@ -4,12 +4,12 @@ import Crossword from '@jaredreisinger/react-crossword';
 
 const data = {
     across: {
-        1: { clue: 'This', answer: 'VOLUME', row: 1, col: 11 },
+        1: { clue: '... controlled ventilation', answer: 'VOLUME', row: 1, col: 11 },
         2: { clue: 'Heart beating not fast enough', answer: 'BRADYCARDIA', row: 7, col: 7 },
         3: { clue: 'The visual representation of a physiological pressure change over time', answer: 'WAVEFORM', row: 18, col: 0 },
     },
     down: {
-        4: { clue: 'The one and only.', answer: 'TVTANTRY', row: 0, col: 11 },
+        4: { clue: 'Someone should show this man some love.', answer: 'TVTANTRY', row: 0, col: 11 },
         5: { clue: 'Tightening of the muscles in the airways that can make it difficult to breathe', answer: 'BRONCHOSPASM', row: 7, col: 7 },
         6: { clue: 'W in PCWP', answer: 'WEDGE', row: 18, col: 0 },
     },
