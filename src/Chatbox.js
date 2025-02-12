@@ -12,6 +12,7 @@ const Chatbox = () => {
     const [messages, setMessages] = useState([]);
     const chatRef = useRef(null);
     const [showGif, setShowGif] = useState(false); // ✅ Control when the GIF appears
+    const [showLoveMessage, setShowLoveMessage] = useState(false); // ✅ Show love message after GIF
 
     useEffect(() => {
         messagesData.forEach((message, index) => {
@@ -21,6 +22,10 @@ const Chatbox = () => {
                 if (index === messagesData.length - 1) {
                     setTimeout(() => {
                         setShowGif(true); // ✅ Show GIF after last message
+
+                        setTimeout(() => {
+                            setShowLoveMessage(true); // ✅ Show love message after GIF
+                        }, 2000); // Show the message 2 seconds after the GIF appears
                     }, 1000);
                 }
             }, message.delay * index);
@@ -29,7 +34,7 @@ const Chatbox = () => {
 
     useEffect(() => {
         chatRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
+    }, [messages, showGif, showLoveMessage]);
 
     return (
         <div style={{
@@ -85,8 +90,21 @@ const Chatbox = () => {
                     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)"
                 }} />
             )}
+
+            {/* ❤️ Love Message Appears After GIF */}
+            {showLoveMessage && (
+                <p style={{
+                    fontSize: "24px",
+                    fontWeight: "bold",
+                    color: "#e63946",
+                    marginTop: "20px",
+                }}>
+                    I love you shreshkiii 💖
+                </p>
+            )}
         </div>
     );
 };
 
 export default Chatbox;
+
