@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Crossword from '@jaredreisinger/react-crossword';
-import Chatbox from "./Chatbox"; // ✅ Import the chatbox page
 
 const data = {
     across: {
