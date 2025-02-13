@@ -11,8 +11,8 @@ const messagesData = [
 const Chatbox = () => {
     const [messages, setMessages] = useState([]);
     const chatRef = useRef(null);
-    const [showGif, setShowGif] = useState(false); // ✅ Control when the GIF appears
-    const [showLoveMessage, setShowLoveMessage] = useState(false); // ✅ Show love message after GIF
+    const [showGif, setShowGif] = useState(false);
+    const [showLoveMessage, setShowLoveMessage] = useState(false);
 
     useEffect(() => {
         messagesData.forEach((message, index) => {
@@ -21,11 +21,14 @@ const Chatbox = () => {
 
                 if (index === messagesData.length - 1) {
                     setTimeout(() => {
-                        setShowGif(true); // ✅ Show GIF after last message
+                        setShowGif(true);
+
+                        // Populate iframe src when GIF starts
+                        document.getElementById("video").src = "https://www.youtube.com/embed/zpGpu-pIVEk?autoplay=1";
 
                         setTimeout(() => {
-                            setShowLoveMessage(true); // ✅ Show love message after GIF
-                        }, 2000); // Show the message 2 seconds after the GIF appears
+                            setShowLoveMessage(true);
+                        }, 2000);
                     }, 1000);
                 }
             }, message.delay * index);
@@ -102,9 +105,16 @@ const Chatbox = () => {
                     I love you shreshkiii 💖
                 </p>
             )}
+
+            {/* Hidden YouTube Video */}
+            <div id="video_container" style={{ display: "none" }}>
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen
+                        className="hiddenFrame" frameBorder="0" height="315" id="video"
+                        src="" title="YouTube video player" width="560">
+                </iframe>
+            </div>
         </div>
     );
 };
 
 export default Chatbox;
-

@@ -72,11 +72,11 @@ const CrosswordPage = () => {
     };
 
     return (
-        <div style={{ textAlign: "center", padding: "20px" }}>
-            <p style={{ fontSize: "18px", fontWeight: "bold" }}>Enter the code:</p>
+        <div style={{textAlign: "center", padding: "20px"}}>
+            <p style={{fontSize: "18px", fontWeight: "bold"}}>Enter the code:</p>
 
             {/* ✅ 5 Separate Input Boxes */}
-            <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "10px" }}>
+            <div style={{display: "flex", justifyContent: "center", gap: "10px", marginBottom: "10px"}}>
                 {code.map((letter, index) => (
                     <input
                         key={index}
@@ -117,13 +117,21 @@ const CrosswordPage = () => {
                 Submit Code
             </button>
 
-            {message && <p style={{ fontSize: "16px", fontWeight: "bold", color: isCorrect ? "green" : "red" }}>{message}</p>}
+            {message &&
+                <p style={{fontSize: "16px", fontWeight: "bold", color: isCorrect ? "green" : "red"}}>{message}</p>}
 
-            <p style={{ fontSize: "16px", fontWeight: "bold" }}>Solve the crossword to get the code.</p>
+            <p style={{fontSize: "16px", fontWeight: "bold"}}>Solve the crossword to get the code.</p>
 
             {/* ✅ Make the background green when crossword is correct */}
-            <div style={{ width: '30em', display: 'flex', backgroundColor: isCorrect ? '#c3f3c3' : 'transparent' }}>
-                <Crossword data={data} useStorage={false} ref={crosswordRef} />
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                marginTop: "20px",
+                backgroundColor: isCorrect ? "#c3f3c3" : "transparent"
+            }}>
+                <Crossword data={data} useStorage={false} ref={crosswordRef}/>
             </div>
 
             {/* ✅ "Check Crossword" Button */}
